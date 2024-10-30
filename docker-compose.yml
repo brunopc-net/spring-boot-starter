@@ -1,0 +1,5 @@
+services:
+  spring-boot-starter-app:
+    image: brunopc/spring-boot-starter:0.0.1
+    ports:
+      - "8080:8080"
