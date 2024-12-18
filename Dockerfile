@@ -3,8 +3,8 @@ FROM eclipse-temurin:21.0.5_11-jdk-noble AS build-image
 
 WORKDIR /app
 
-ARG GRADLE_VERSION=8.10.2 \
-    GRADLE_CHECKSUM=31c55713e40233a8303827ceb42ca48a47267a0ad4bab9177123121e71524c26
+ARG GRADLE_VERSION=8.11.1 \
+    GRADLE_CHECKSUM=f397b287023acdba1e9f6fc5ea72d22dd63669d59ed4a289a29b1a76eee151c6
     # You can verify checksum at https://gradle.org/release-checksums
 
 # Install Gradle
@@ -51,8 +51,8 @@ RUN set -o errexit -o nounset \
 #######################################################################################################################
 
 # Pinning the exact Ubuntu version, resulting in the same result in every container
-FROM ubuntu:oracular-20241009
-# FROM ubuntu:noble-20241011 Noble (24.04) is the latest LTS, but has some CVEs
+FROM ubuntu:oracular-20241120
+# FROM ubuntu:noble-20241118.1 Noble (24.04) is the latest LTS, but has some CVEs - 2 medium and 5 low as of now
 
 # Package install (uncomment if needed)
 # RUN apt-get update && apt-get install -y \
